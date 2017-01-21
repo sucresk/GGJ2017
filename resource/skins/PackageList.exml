@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="PackageListSkin" width="640" height="310" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+<e:Skin class="PackageListSkin" width="640" height="264" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
 	<w:Config id="159bfff33fd" ></w:Config>
 	<e:Scroller left="0" right="0" top="0" bottom="0" scrollPolicyH="on" scrollPolicyV="off">
-		<e:List anchorOffsetX="0" left="0" right="0" bottom="0" itemRenderer="PackageIcon" top="0" width="640">
+		<e:List anchorOffsetX="0" left="0" right="0" bottom="42" itemRenderer="PackageIcon" top="0" width="640" anchorOffsetY="0">
 			<e:layout>
 			<e:TileLayout orientation="columns" requestedRowCount="2" horizontalGap="0" horizontalAlign="left" requestedColumnCount="12" columnAlign="left" verticalGap="6"/>
 			</e:layout>
-			<e:ArrayCollection>
+			<e:ArrayCollection id="ac">
 			<e:Array>
 				<e:Object name="asdfad"/>
 				<e:Object name="adfadf"/>

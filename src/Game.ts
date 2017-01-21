@@ -22,7 +22,7 @@ class Game extends eui.UILayer
         this.init();
     }
 
-    private package:PackageList;
+
 	private init():void
     {
         console.log("this is a new game!");
@@ -34,9 +34,13 @@ class Game extends eui.UILayer
         sceneManager.setCurSceneByName("gameLevel");
         sceneManager.startTick();
 
-        this.package = new PackageList();
-        this.addChild(this.package);
-        this.package.bottom = 0;
+        packageList = new PackageList();
+        this.addChild(packageList);
+         packageList.bottom = 0;
+
+         talk = new Talk();
+         this.addChild(talk);
+         talk.visible = false;
     }
 
     private initDB():void

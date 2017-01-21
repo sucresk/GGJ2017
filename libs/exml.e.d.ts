@@ -54,3 +54,5 @@ declare module skins{
 }
 declare class PackageListSkin extends eui.Skin{
 }
+declare class TalkSkin extends eui.Skin{
+}

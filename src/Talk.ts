@@ -1,34 +1,48 @@
-class Talk extends egret.DisplayObjectContainer {
+class Talk extends eui.Component {
 	public constructor() {
 		super();
 
-		this.init();
+		this.skinName = "TalkSkin";
+
+		this.percentWidth = 100;
+		this.percentHeight = 100;
 	}
 
-	private text:egret.TextField;
+	public bg:eui.Image;
+	public text:eui.Label;
+	public rect:eui.Rect;
 
-	private bg:egret.Bitmap;
-	private init():void {
-		this.bg = AssetManager.createBitmapByName("dialog_bg_png", false);
-		this.addChild(this.bg);
+	protected childrenCreated(): void {
+		super.childrenCreated();
 
-		this.text = new egret.TextField();
-		this.text.x = 10;
-		this.text.y = 10;
-		this.text.textColor = 0xB26937;
-		// this.text.size = 18;
-
-		this.addChild(this.text);
+		this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClickHandler, this);
 	}
 
-	public setTalk(msg:string):void {
+	private call:()=>void;
+
+	private onClickHandler(e:egret.TouchEvent):void {
+		this.visible = false;
+
+		if (this.call) {
+			this.call();
+		}
+	}
+	
+	public setTalk(msg: string, call?:()=>void): void {
 		this.text.text = msg;
+		this.call = call;
 
 		this.bg.scaleX = this.bg.scaleY = 1;
 		this.bg.width = this.text.width + 20;
 		this.bg.height = this.text.height + 20;
 
-		this.bg.y = -this.bg.height;
+		this.bg.y = this.height / 2 - this.bg.height / 2;
+		this.bg.x = this.width / 2 - this.bg.width / 2;
 		this.text.y = this.bg.y + 10;
+		this.text.x = this.bg.x + 10;
+
+		this.visible = true;
 	}
 }
+
+var talk:Talk;

@@ -1,27 +1,21 @@
-class PackageIcon extends eui.ItemRenderer implements  eui.UIComponent {
+class PackageIcon extends eui.ItemRenderer implements eui.UIComponent {
 	public constructor() {
 		super();
 	}
 
-	protected partAdded(partName:string,instance:any):void
-	{
-		super.partAdded(partName,instance);
+	protected partAdded(partName: string, instance: any): void {
+		super.partAdded(partName, instance);
 	}
 
 
-	protected childrenCreated():void
-	{
-		super.childrenCreated();
+	protected dataChanged(): void {
+		super.dataChanged();
+		this.d = {};
+
+		let item = RES.getRes("items_json")["items"][this.data.id - 1];
+		this.d.icon = item.icon;
 	}
 
-	
-	private _name : string;
-	public get name() : string {
-		return this._name;
-	}
-	public set name(v : string) {
-		this._name = v;
-	}
-	
-	
+	data: {id:number};
+	d: any;
 }

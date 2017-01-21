@@ -27,6 +27,7 @@ class Goods extends egret.DisplayObjectContainer {
         this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTapHandler, this);
     }
 
+    private isHad:boolean = false;
     private onTapHandler(e: egret.TouchEvent): void {
         e.stopPropagation();
 
@@ -36,7 +37,14 @@ class Goods extends egret.DisplayObjectContainer {
             e.currentTarget.animation.play("normal");
 
             e.currentTarget.removeEventListener(dragonBones.AnimationEvent.COMPLETE, f, this);
+
+		    let item = RES.getRes("items_json")["items"][self.id - 1];
+            talk.setTalk(item.content, ()=> {
+                if (!self.isHad) {
+                    self.isHad = true;
+                    packageList.addID(self.id);
+                }
+            });
         }, this);
     }
-
 }

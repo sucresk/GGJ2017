@@ -18,10 +18,13 @@ class GameLevel extends Scene {
 			let goods:Goods = new Goods(i % 1 + 1);
 			this.goodsContainer.addChild(goods);
 			goods.x = Math.random() * (this.stage.width  - 100) + 50;
-			goods.y = Math.random() * (this.stage.height - 400) + 50;
+			goods.y = Math.random() * (this.stage.height - 360) + 50;
 		}
 	}
 
+
+	private endX: number = 25;
+	private endY: number = 50;
 	public init(): void {
 		var bg: egret.Bitmap = AssetManager.createBitmapByName("scene_1_png");
 		bg.x = this.stage.stageWidth / 2;
@@ -38,8 +41,8 @@ class GameLevel extends Scene {
 
 		// this.addEventListener(egret.TouchEvent.TOUCH_END, this.onTouch, this);
 		this.mainRole = Game.instance.roleManager.getRole("roshan");
-		this.mainRole.roleX = 25;
-		this.mainRole.roleY = 50;
+		this.mainRole.roleX = this.endX;
+		this.mainRole.roleY = this.endY;
 		this.roleContainer.addChild(this.mainRole);
 		this.mainRole.walk(Role.LEFT);
 
@@ -71,8 +74,8 @@ class GameLevel extends Scene {
 	public tick(advancedTime: number): void {
 		dragonBones.WorldClock.clock.advanceTime(-1);
 
-		let isMove = this.mainRole.addStep(this.endX, this.endY);
-		if (isMove) {
+		let moveType = this.mainRole.addStep(this.endX, this.endY);
+		if (moveType > 0) {
 			for (let i: number = 0; i < this.roles.length; i++) {
 				this.roles[i].addStep(this.rolePositions[i].x, this.rolePositions[i].y);
 			}
@@ -89,6 +92,14 @@ class GameLevel extends Scene {
 			}
 
 			this.roleSort();
+
+			if (moveType == 2) {
+				this.mainRole.stand(this.mainRole.direct);
+
+				for (let i: number = 0; i < this.roles.length; i++) {
+					this.roles[i].stand(this.roles[i].direct);
+				}
+			}
 		}
 
 	}
@@ -103,9 +114,6 @@ class GameLevel extends Scene {
 		this.touchEnabled = true;
 		this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClickHandler, this);
 	}
-
-	private endX: number;
-	private endY: number;
 	private onClickHandler(e: egret.TouchEvent): void {
 		this.endX = Math.round(e.stageX / GameLevel.STEP);
 		this.endY = Math.round(e.stageY / GameLevel.STEP);

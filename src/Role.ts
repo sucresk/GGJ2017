@@ -76,54 +76,68 @@ class Role extends egret.Sprite
         this.y = this._roleY * GameLevel.STEP;
     }
     
-    public addStep(endX:number, endY:number):boolean {
-        if (this.roleX < endX) {
-			this.roleX++;
+    public addStep(endX:number, endY:number):number {
+        if (this.roleX == endX && this.roleY == endY) {
+            return 0;
+        }
 
-			this.walk(Role.RIGHT);
-            return true;
-		}
-		else if (this.roleX > endX) {
+		if (this.roleX > endX) {
 			this.roleX--;
 
 			this.walk(Role.LEFT);
-            return true;
+		}
+        else if (this.roleX < endX) {
+			this.roleX++;
+
+			this.walk(Role.RIGHT);
 		}
 		else {
-			if (this.roleY <  endY) {
-				this.roleY++;
-
-				this.walk(Role.FRONT);
-            return true;
-			}
-			else if (this.roleY > endY) {
+			if (this.roleY > endY) {
 				this.roleY--;
 
 				this.walk(Role.BACK);
-            return true;
+			}
+			else if (this.roleY <  endY) {
+				this.roleY++;
+
+				this.walk(Role.FRONT);
 			}
 		}
-        return false;
+
+        if (this.roleX == endX && this.roleY == endY) {
+            return 2;
+        }
+        
+        return 1;
     }
     
-    private lastDirect:string;
+    
+    private _direct : string;
+    public get direct() : string {
+        return this._direct;
+    }
+    public set direct(v : string) {
+        this._direct = v;
+    }
+    
+
     private dbType:string;
     public stand(direct:string):void
     {   
-        if (direct == this.lastDirect && this.dbType == "stand") {
+        if (direct == this._direct && this.dbType == "stand") {
             return;
         }
-        this.lastDirect = direct;
+        this._direct = direct;
         this.dbType = "stand";
         this.play("stand_" + direct);
     }
 
     public walk(direct:string):void
     {
-        if (direct == this.lastDirect && this.dbType == "walk") {
+        if (direct == this._direct && this.dbType == "walk") {
             return;
         }
-        this.lastDirect = direct;
+        this._direct = direct;
         this.dbType = "walk";
         this.play("walk_" + direct);
     }
