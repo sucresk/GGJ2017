@@ -17,11 +17,11 @@ class RoleManager
     public getRole(roleName:string):Role
     {
         console.log(roleName);
-        if(this._roleDict[roleName] == null)
-        {
-            this._roleDict[roleName] = new Role(roleName,1);
-        }
-        return <Role>this._roleDict[roleName];
+        // if(this._roleDict[roleName] == null)
+        // {
+            return  this._roleDict[roleName] = new Role(roleName,1);
+        // }
+        // return <Role>this._roleDict[roleName];
     }
     public getRoleSex(roleName:string):number
     {
