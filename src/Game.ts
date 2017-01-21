@@ -8,15 +8,16 @@ class Game extends eui.UILayer
 
     public roleManager:RoleManager;
     public random:Random;
-    // public gameURL:string = "http://sucresk.github.io/ggj2017/index.html";
-    public gameURL:string = "http://10.0.12.50:5334/index.html";
+    public gameURL:string = "http://sucresk.github.io/ggj2017/index.html";
+    // public gameURL:string = "http://10.0.12.50:5334/index.html";
 	public constructor() 
 	{
 		super();
         Game._instance = this;
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAdded, this);
         this.roleManager = new RoleManager();
-        this.random = new Random(0, RES.getRes("random_png"));
+        // this.random = new Random(0, RES.getRes("random_png"));
+        this.random = new Random(Math.floor(Math.random() * 100000), RES.getRes("random_png"));
         
 	}
 

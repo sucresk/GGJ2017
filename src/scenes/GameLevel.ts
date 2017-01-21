@@ -5,6 +5,8 @@ var codeSegmentDefine = [9, 10,11,12,13,14,15];
 var goodsDefine=[1,2,3,4,5,6,7];
 
 var CODE_ID = 8;
+var SHIELD_ID = 16;
+var shieldID_rate = 0.8;
 var userGameData:any;
 class GameLevel extends Scene {
 	public mainRole: Role;
@@ -104,7 +106,7 @@ class GameLevel extends Scene {
 	{
 		if(userGameData.roles && userGameData.roles.length >= 7)
 		{
-			if(userGameData.package.indexOf(88) != -1)
+			if(userGameData.package.indexOf(SHIELD_ID) != -1)
 			{
 				this.next("gameEnd2");
 			}
@@ -140,13 +142,38 @@ class GameLevel extends Scene {
 		this._sceneData = {};
 		let bgIndex = Game.instance.random.Int(sceneDefine.length);
 		this._sceneData.bg = sceneDefine[bgIndex];
-		let letterIndex = Game.instance.random.Int(letterDefine.length);
-		this._sceneData.letterID = letterDefine[letterIndex];
-		let codeSIndex = Game.instance.random.Int(codeSegmentDefine.length)
-		this._sceneData.codeSegmentID = codeSegmentDefine[codeSIndex];
-		if(userGameData.codeID != CODE_ID)
+		let letterIndex:number;
+		let letterid:number;
+		let i:number = 0;
+		do
+		{
+			letterIndex = Game.instance.random.Int(letterDefine.length);
+			letterid = letterDefine[letterIndex]
+			this._sceneData.letterID = letterid;
+			i++;
+		}
+		while(userGameData.package.indexOf(letterid) != -1 && i < 3)
+
+		let codeSIndex:number;
+		let codeSid:number;
+		i = 0;
+		do
+		{
+			codeSIndex = Game.instance.random.Int(codeSegmentDefine.length)
+			codeSid = codeSegmentDefine[codeSIndex]
+			this._sceneData.codeSegmentID = codeSid;
+			i++;
+		}
+		while(userGameData.package.indexOf(codeSid) != -1 && i < 3)
+
+		if(userGameData.package.indexOf(CODE_ID) == -1)
 		{
 			this._sceneData.codeID = CODE_ID;
+		}
+
+		if(userGameData.package.indexOf(SHIELD_ID) == -1)
+		{
+			this._sceneData.shieldID = Game.instance.random.Next() > shieldID_rate ? SHIELD_ID : -1;
 		}
 
 		var goodsNum = Game.instance.random.Int(4,7);
@@ -168,6 +195,13 @@ class GameLevel extends Scene {
 		if(this._sceneData.codeID != null)
 		{
 			this._sceneData.goods[2].itemID = this._sceneData.codeID;
+		}
+		if(this._sceneData.shieldID == SHIELD_ID)
+		{
+			if(this._sceneData.goods[3])
+			{
+				this._sceneData.goods[3].itemID = this._sceneData.shieldID;
+			}
 		}
 	}
 
