@@ -53,7 +53,7 @@
             "id":8,
             "type":"codeSegment",
             "name":"神秘代码",
-            "icon":"letter1_icon_png",
+            "icon":"code_png",
             "key":"集合七个入梦者，杀死他们，就可以逃出七重梦境！？",
             "content":"龘锕畚雠丶阸酆杲薨霁阚颅缗囝嚄丿鞘糅恃滕脘戌彝瓒"
         },
@@ -61,7 +61,7 @@
             "id":9,
             "type":"code",
             "name":"代码片段一",
-            "icon":"letter1_icon_png",
+            "icon":"codeSegment_1_png",
             "key":"集合",
             "content":"龘锕"
         },
@@ -69,7 +69,7 @@
             "id":10,
             "type":"codeSegment",
             "name":"代码片段二",
-            "icon":"letter1_icon_png",
+            "icon":"codeSegment_2_png",
             "key":"七个",
             "content":"畚雠丶"
         },
@@ -77,7 +77,7 @@
             "id":11,
             "type":"codeSegment",
             "name":"代码片段三",
-            "icon":"letter1_icon_png",
+            "icon":"codeSegment_3_png",
             "key":"入梦者",
             "content":"阸酆杲薨"
         },
@@ -85,7 +85,7 @@
             "id":12,
             "type":"codeSegment",
             "name":"代码片段四",
-            "icon":"letter1_icon_png",
+            "icon":"codeSegment_4_png",
             "key":"杀死他们",
             "content":"霁阚颅缗"
         },
@@ -93,7 +93,7 @@
             "id":13,
             "type":"codeSegment",
             "name":"代码片段五",
-            "icon":"letter1_icon_png",
+            "icon":"codeSegment_5_png",
             "key":"，就可以逃出",
             "content":"囝嚄丿鞘糅恃"
         },
@@ -101,7 +101,7 @@
             "id":14,
             "type":"codeSegment",
             "name":"代码片段六",
-            "icon":"letter1_icon_png",
+            "icon":"codeSegment_6_png",
             "key":"七重梦境",
             "content":"滕脘戌"
         },
@@ -109,7 +109,7 @@
             "id":15,
             "type":"codeSegment",
             "name":"代码片段七",
-            "icon":"letter1_icon_png",
+            "icon":"codeSegment_7_png",
             "key":"！？",
             "content":"彝瓒"
         }

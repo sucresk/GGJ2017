@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "bg_jpg,egret_icon_png,scene_1_png,items_tex_png,roshan_tex_png,dialog_bg_png,itemIcon_png,letter_bg_png,items_ske_json,items_tex_json,roshan_ske_json,roshan_tex_json,button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,items_json,button_down2_png,button_up2_png,checkbox_select_disabled2_png,checkbox_select_down2_png,checkbox_select_up2_png,checkbox_unselect2_png,selected2_png,border2_png,header2_png,thumb_pb2_png,track_pb2_png,radiobutton_select_disabled2_png,radiobutton_select_down2_png,radiobutton_select_up2_png,radiobutton_unselect2_png,roundthumb2_png,track_sb2_png,thumb2_png,track2_png,tracklight2_png,handle2_png,off2_png,on2_png,suicide_png,package_icon_png,letter_1_png,letter_2_png,letter_3_png,letter_4_png,letter_5_png,letter_6_png,letter_7_png",
+			"keys": "bg_jpg,egret_icon_png,scene_1_png,items_tex_png,roshan_tex_png,dialog_bg_png,itemIcon_png,letter_bg_png,items_ske_json,items_tex_json,roshan_ske_json,roshan_tex_json,button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,items_json,button_down2_png,button_up2_png,checkbox_select_disabled2_png,checkbox_select_down2_png,checkbox_select_up2_png,checkbox_unselect2_png,selected2_png,border2_png,header2_png,thumb_pb2_png,track_pb2_png,radiobutton_select_disabled2_png,radiobutton_select_down2_png,radiobutton_select_up2_png,radiobutton_unselect2_png,roundthumb2_png,track_sb2_png,thumb2_png,track2_png,tracklight2_png,handle2_png,off2_png,on2_png,suicide_png,package_icon_png,letter_1_png,letter_2_png,letter_3_png,letter_4_png,letter_5_png,letter_6_png,letter_7_png,code_png,codeSegment_1_png,codeSegment_2_png,codeSegment_3_png,codeSegment_4_png,codeSegment_5_png,codeSegment_6_png,codeSegment_7_png",
 			"name": "preload"
 		}
 	],
@@ -346,6 +346,46 @@
 			"name": "letter_7_png",
 			"type": "image",
 			"url": "assets/icon/letter_7.png"
+		},
+		{
+			"name": "code_png",
+			"type": "image",
+			"url": "assets/icon/code.png"
+		},
+		{
+			"name": "codeSegment_1_png",
+			"type": "image",
+			"url": "assets/icon/codeSegment_1.png"
+		},
+		{
+			"name": "codeSegment_2_png",
+			"type": "image",
+			"url": "assets/icon/codeSegment_2.png"
+		},
+		{
+			"name": "codeSegment_3_png",
+			"type": "image",
+			"url": "assets/icon/codeSegment_3.png"
+		},
+		{
+			"name": "codeSegment_4_png",
+			"type": "image",
+			"url": "assets/icon/codeSegment_4.png"
+		},
+		{
+			"name": "codeSegment_5_png",
+			"type": "image",
+			"url": "assets/icon/codeSegment_5.png"
+		},
+		{
+			"name": "codeSegment_6_png",
+			"type": "image",
+			"url": "assets/icon/codeSegment_6.png"
+		},
+		{
+			"name": "codeSegment_7_png",
+			"type": "image",
+			"url": "assets/icon/codeSegment_7.png"
 		}
 	]
 }
