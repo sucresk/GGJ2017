@@ -102,12 +102,28 @@ class GameLevel extends Scene {
 	}
 	private suicide():void
 	{
-		this.initSceneData();
-		this.clearScene();
-		this.initScene();
-		this.roleContainer.removeChildren();
-		this.initGoods();
-		this.resetRole();
+		if(userGameData.roles && userGameData.roles.length >= 7)
+		{
+			if(userGameData.package.indexOf(88) != -1)
+			{
+				this.next("gameEnd2");
+			}
+			else
+			{
+				this.next("gameEnd1");
+			}
+		}
+		else
+		{
+			this.initSceneData();
+			this.clearScene();
+			this.initScene();
+			this.roleContainer.removeChildren();
+			this.initGoods();
+			this.resetRole();
+			this.addChild(this.btnSuicide);
+		}
+		
 	}
 	private initGameData():void
 	{
@@ -138,7 +154,8 @@ class GameLevel extends Scene {
 		for(let i = 0; i < goodsNum; i++)
 		{
 			var goodsObj:any = {};
-			goodsObj.id = Game.instance.random.Int(goodsDefine.length);
+			let goodIndex = Game.instance.random.Int(goodsDefine.length)
+			goodsObj.id = goodsDefine[goodIndex];
 			var a = Game.instance.random.Next();
 			goodsObj.x = a* (this.stage.stageWidth  - 100) + 50;
 			a= Game.instance.random.Next();
@@ -167,15 +184,6 @@ class GameLevel extends Scene {
 	private initRole():void
 	{
 		this.mainRole = Game.instance.roleManager.getRole(userGameData.mainRole);
-		this.resetRole();
-	}
-
-	private resetRole():void
-	{
-		this.mainRole.roleX = this.endX;
-		this.mainRole.roleY = this.endY;
-		this.roleContainer.addChild(this.mainRole);
-		this.mainRole.stand(Role.FRONT);
 
 		if(userGameData.roles && userGameData.roles.length > 0)
 		{
@@ -183,12 +191,36 @@ class GameLevel extends Scene {
 			{
 				var roleObj:any = userGameData.roles[i];
 				let role = Game.instance.roleManager.getRole(roleObj.id);
-				this.roleContainer.addChild(role);
-				this.mainRole.walk(Role.LEFT);
+				// this.roleContainer.addChild(role);
 				role.roleX = this.mainRole.roleX + (i + 1) * this.gap;
 				role.roleY = this.mainRole.roleY;
 				this.rolePositions.push({x:this.mainRole.roleX + i * this.gap, y : this.mainRole.roleY});
 				this.roles.push(role);
+			}
+		}
+
+		this.resetRole();
+	}
+
+	private resetRole():void
+	{
+		this.endX = 25;
+		this.endY = 50;
+		this.mainRole.roleX = this.endX;
+		this.mainRole.roleY = this.endY;
+		this.roleContainer.addChild(this.mainRole);
+		this.mainRole.stand(Role.FRONT);
+
+		if(this.roles && this.roles.length > 0)
+		{
+			this.rolePositions.length = 0;
+			for (let i: number = 0, len:number = this.roles.length; i < len; i++) 
+			{
+				let role = this.roles[i];
+				this.roleContainer.addChild(role);
+				role.roleX = this.mainRole.roleX + (i + 1) * this.gap;
+				role.roleY = this.mainRole.roleY;
+				this.rolePositions.push({x:this.mainRole.roleX + i * this.gap, y : this.mainRole.roleY});
 			}
 		}
 	}

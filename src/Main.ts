@@ -142,19 +142,11 @@ class Main extends eui.UILayer {
         egret.localStorage.setItem("a","bingbo2");
         egret.localStorage.clear();
         */
+
         var game:Game = new Game();
         this.addChild(game);
     }
-    private GetQueryString(name)
-    {
-        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-        var r = window.location.search.substr(1).match(reg);
-        if(r!=null)
-        {
-            return  decodeURI(r[2]); 
-        } 
-        return null;
-    }
+    
     private textfield:egret.TextField;
     /**
      * 创建场景界面

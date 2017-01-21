@@ -60,7 +60,8 @@ class Goods extends egret.DisplayObjectContainer {
                         if(item)
                         {
                             talk.setTalk(`获得  ${item.name}`, () => {
-                                userGameData.package.push(self.itemID);
+                                
+                                Game.instance.addPackageItem(self.itemID);
                                 packageList.addID(self.itemID);
                             });
                         }
