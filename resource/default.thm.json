@@ -14,7 +14,7 @@
     "eui.VSlider": "resource/eui_skins/VSliderSkin.exml",
     "eui.ItemRenderer": "resource/eui_skins/ItemRendererSkin.exml",
     "PackageList": "resource/skins/PackageList.exml",
-    "PackageIcon": "resource/eui_skins/PackageIcon.exml",
+    "PackageIcon": "resource/skins/PackageIcon.exml",
     "Letter": "resource/skins/Letter.exml"
   },
   "autoGenerateExmlsList": true,
@@ -24,7 +24,6 @@
     "resource/eui_skins/HScrollBarSkin.exml",
     "resource/eui_skins/HSliderSkin.exml",
     "resource/eui_skins/ItemRendererSkin.exml",
-    "resource/eui_skins/PackageIcon.exml",
     "resource/eui_skins/PanelSkin.exml",
     "resource/eui_skins/ProgressBarSkin.exml",
     "resource/eui_skins/RadioButtonSkin.exml",
@@ -33,7 +32,9 @@
     "resource/eui_skins/ToggleSwitchSkin.exml",
     "resource/eui_skins/VScrollBarSkin.exml",
     "resource/eui_skins/VSliderSkin.exml",
+    "resource/skins/Confirm.exml",
     "resource/skins/Letter.exml",
+    "resource/skins/PackageIcon.exml",
     "resource/skins/PackageList.exml",
     "resource/skins/Talk.exml"
   ]

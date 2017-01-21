@@ -3,7 +3,7 @@ class Goods extends egret.DisplayObjectContainer {
 
     private id: number;
     private icon;
-    private armature;
+    private armature:dragonBones.Armature;
 
 
     private itemID:number;
@@ -30,6 +30,13 @@ class Goods extends egret.DisplayObjectContainer {
         this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTapHandler, this);
     }
 
+    public dispose():void
+    {
+        this.touchEnabled = false;
+        this.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTapHandler, this);
+        dragonBones.WorldClock.clock.remove(this.armature);
+        this.armature.dispose();
+    }
     private isHad: boolean = false;
     private onTapHandler(e: egret.TouchEvent): void {
         e.stopPropagation();
@@ -44,10 +51,21 @@ class Goods extends egret.DisplayObjectContainer {
             if (!self.isHad) {
                 self.isHad = true;
 
-                let item = RES.getRes("items_json")["items"][self.itemID - 1];
-                talk.setTalk(`恭喜你获得 ${item.name}`, () => {
-                    packageList.addID(self.itemID);
-                });
+                if(self.itemID > 0)
+                {
+                    if(userGameData.package.indexOf(self.itemID) == -1)
+                    {
+                        // let item = RES.getRes("items_json")["items"][self.itemID];
+                        let item = Game.instance.getItemObj(self.itemID);
+                        if(item)
+                        {
+                            talk.setTalk(`获得  ${item.name}`, () => {
+                                userGameData.package.push(self.itemID);
+                                packageList.addID(self.itemID);
+                            });
+                        }
+                    }   
+                }   
             }
         }, this);
     }

@@ -29,6 +29,7 @@ class Talk extends eui.Component {
 	}
 	
 	public setTalk(msg: string, call?:()=>void): void {
+		
 		this.text.text = msg;
 		this.call = call;
 

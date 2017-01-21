@@ -10,7 +10,7 @@ class PackageList extends eui.Component implements eui.UIComponent {
 	public group:eui.Group;
 
 
-	private ac:eui.ArrayCollection;
+	private ac:eui.ArrayCollection;// = new eui.ArrayCollection();
 	protected childrenCreated(): void {
 		super.childrenCreated();
 

@@ -51,7 +51,7 @@
         },
         {
             "id":8,
-            "type":"codeSegment",
+            "type":"code",
             "name":"神秘代码",
             "icon":"code_png",
             "key":"集合七个入梦者，杀死他们，就可以逃出七重梦境！？",
@@ -59,7 +59,7 @@
         },
         {
             "id":9,
-            "type":"code",
+            "type":"codeSegment",
             "name":"代码片段一",
             "icon":"codeSegment_1_png",
             "key":"集合",

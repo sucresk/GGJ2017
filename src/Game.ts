@@ -7,15 +7,29 @@ class Game extends eui.UILayer
     }
 
     public roleManager:RoleManager;
-
+    public random:Random;
 	public constructor() 
 	{
 		super();
         Game._instance = this;
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAdded, this);
         this.roleManager = new RoleManager();
+        this.random = new Random(0, RES.getRes("random_png"))
 	}
 
+    public getItemObj(id:number):any
+    {
+        var items = RES.getRes("items_json")["items"];
+        for(let i:number =0 , len = items.length; i < len; i++ )
+        {
+            if(items[i].id == id)
+            {
+                return items[i];
+            }
+        }
+        return null;
+    }
+    
 	private onAdded(e:egret.Event):void
     {
         this.removeEventListener(egret.Event.ADDED_TO_STAGE, this.onAdded, this);
@@ -45,6 +59,11 @@ class Game extends eui.UILayer
          letter = new Letter();
          this.addChild(letter);
          letter.visible = false;
+
+        //  suicideConfim = new Confirm();
+        //  this.addChild(suicideConfim);
+        //  suicideConfim.visible = false;
+
     }
 
     private initDB():void
