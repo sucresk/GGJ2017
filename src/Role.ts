@@ -9,7 +9,6 @@ class Role extends egret.Sprite
     public name:string;
     private _scale:number;
 
-    private talk:Talk;
     public constructor(name:string = "man1", scale:number = 1)
     {
         super();
@@ -31,30 +30,8 @@ class Role extends egret.Sprite
         dragonBones.WorldClock.clock.add(this.armature);
         this.addChild(armatureDisplay);
 
-
-        this.talk = new Talk();
-        // this.addChild(this.talk);
-        this.talk.y = armatureDisplay.y - armatureDisplay.height;
-
-        this.talk.setTalk("asdflafa\nasfafa\nasdfasfasfdasfa");
-
-        this.touchEnabled = true;
-        this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTalk, this);
     }
 
-    private onTalk(e:egret.TouchEvent):void {
-        e.stopImmediatePropagation();
-        
-        if (this.talk.parent) {
-            return;
-        }
-        this.addChild(this.talk);
-
-        egret.setTimeout(()=> {
-            this.removeChild(this.talk);
-        }, this, 3000);
-    }
-    
     private _roleX : number;
     public get roleX() : number {
         return this._roleX;
