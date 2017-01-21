@@ -31,6 +31,7 @@ var game_file_list = [
 	"bin-debug/AssetAdapter.js",
 	"bin-debug/lion/scenes/SceneEvent.js",
 	"bin-debug/lion/scenes/SceneManager.js",
+	"bin-debug/package/Letter.js",
 	"bin-debug/package/PackageIcon.js",
 	"bin-debug/package/PackageList.js",
 	"bin-debug/qr/QR8bitByte.js",

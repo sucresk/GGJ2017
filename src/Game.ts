@@ -41,6 +41,10 @@ class Game extends eui.UILayer
          talk = new Talk();
          this.addChild(talk);
          talk.visible = false;
+
+         letter = new Letter();
+         this.addChild(letter);
+         letter.visible = false;
     }
 
     private initDB():void

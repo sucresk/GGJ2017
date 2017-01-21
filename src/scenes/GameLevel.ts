@@ -14,14 +14,13 @@ class GameLevel extends Scene {
 	private goodsContainer:egret.DisplayObjectContainer;
 
 	private initGoods():void {
-		for (let i:number = 0; i < 8; i++) {
-			let goods:Goods = new Goods(i % 1 + 1);
+		for (let i:number = 0; i < 15; i++) {
+			let goods:Goods = new Goods(i % 7 + 1, i + 1);
 			this.goodsContainer.addChild(goods);
 			goods.x = Math.random() * (this.stage.width  - 100) + 50;
 			goods.y = Math.random() * (this.stage.height - 360) + 50;
 		}
 	}
-
 
 	private endX: number = 25;
 	private endY: number = 50;

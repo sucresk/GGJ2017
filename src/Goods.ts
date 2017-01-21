@@ -5,10 +5,13 @@ class Goods extends egret.DisplayObjectContainer {
     private icon;
     private armature;
 
-    constructor(goodsID: number) {
+
+    private itemID:number;
+    constructor(goodsID: number, itemID:number) {
         super();
 
         this.id = goodsID;
+        this.itemID = itemID;
 
         this.once(egret.Event.ADDED_TO_STAGE, this.init, this);
     }
@@ -41,9 +44,9 @@ class Goods extends egret.DisplayObjectContainer {
             if (!self.isHad) {
                 self.isHad = true;
 
-                let item = RES.getRes("items_json")["items"][self.id - 1];
+                let item = RES.getRes("items_json")["items"][self.itemID - 1];
                 talk.setTalk(`恭喜你获得 ${item.name}`, () => {
-                    packageList.addID(self.id);
+                    packageList.addID(self.itemID);
                 });
             }
         }, this);

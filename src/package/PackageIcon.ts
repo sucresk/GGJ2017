@@ -3,10 +3,22 @@ class PackageIcon extends eui.ItemRenderer implements eui.UIComponent {
 		super();
 	}
 
-	protected partAdded(partName: string, instance: any): void {
-		super.partAdded(partName, instance);
+	protected childrenCreated(): void {
+		super.childrenCreated();
+
+		this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShowHandler, this);
 	}
 
+	private onShowHandler(e:egret.TouchEvent):void {
+
+		let item = RES.getRes("items_json")["items"][this.data.id - 1];
+		if (item.type == "letter") {
+			letter.setLetter(item.id);
+		}
+		else {
+			talk.setTalk(item.content);
+		}
+	}
 
 	protected dataChanged(): void {
 		super.dataChanged();
