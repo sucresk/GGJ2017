@@ -10,11 +10,27 @@ class GameLevel extends Scene {
 	}
 
 	private roleContainer:egret.DisplayObjectContainer;
+
+	private goodsContainer:egret.DisplayObjectContainer;
+
+	private initGoods():void {
+		for (let i:number = 0; i < 8; i++) {
+			let goods:Goods = new Goods(i % 1 + 1);
+			this.goodsContainer.addChild(goods);
+			goods.x = Math.random() * (this.stage.width  - 100) + 50;
+			goods.y = Math.random() * (this.stage.height - 400) + 50;
+		}
+	}
+
 	public init(): void {
 		var bg: egret.Bitmap = AssetManager.createBitmapByName("scene_1_png");
 		bg.x = this.stage.stageWidth / 2;
 		bg.y = this.stage.stageHeight / 2;
 		this.addChild(bg);
+
+		this.goodsContainer = new egret.DisplayObjectContainer();
+		this.addChild(this.goodsContainer);
+		this.initGoods();
 
 		this.roleContainer = new egret.DisplayObjectContainer();
 		this.addChild(this.roleContainer);
