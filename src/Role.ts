@@ -26,8 +26,8 @@ class Role extends egret.Sprite
         
         this.armature = factory.buildArmature(name);
         var armatureDisplay = this.armature.display;
-        armatureDisplay.scaleX = this._scale;
-        armatureDisplay.scaleY = this._scale;
+        armatureDisplay.scaleX = this._scale * 2;
+        armatureDisplay.scaleY = this._scale * 2;
         dragonBones.WorldClock.clock.add(this.armature);
         this.addChild(armatureDisplay);
 
@@ -54,8 +54,6 @@ class Role extends egret.Sprite
             this.removeChild(this.talk);
         }, this, 3000);
     }
-
-    private step:number = 4;
     
     private _roleX : number;
     public get roleX() : number {
@@ -64,7 +62,7 @@ class Role extends egret.Sprite
     public set roleX(v : number) {
         this._roleX = v;
 
-        this.x = this._roleX * this.step;
+        this.x = this._roleX * GameLevel.STEP;
     }
 
     
@@ -75,7 +73,7 @@ class Role extends egret.Sprite
     public set roleY(v : number) {
         this._roleY = v;
 
-        this.y = this._roleY * this.step;
+        this.y = this._roleY * GameLevel.STEP;
     }
     
     public addStep(endX:number, endY:number):boolean {

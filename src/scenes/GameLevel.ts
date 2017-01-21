@@ -1,6 +1,10 @@
 class GameLevel extends Scene {
 	public mainRole: Role;
 
+	private gap:number = 8;
+
+	static STEP:number = 8;
+
 	public constructor() {
 		super();
 	}
@@ -38,7 +42,6 @@ class GameLevel extends Scene {
 		this.initListener();
 	}
 
-	private gap:number = 8;s
 	private roles: Role[] = [];
 
 	private rolePositions: { x: number, y: number }[] = [];
@@ -85,13 +88,11 @@ class GameLevel extends Scene {
 		this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClickHandler, this);
 	}
 
-	private step: number = 4;
-
 	private endX: number;
 	private endY: number;
 	private onClickHandler(e: egret.TouchEvent): void {
-		this.endX = Math.round(e.stageX / this.step);
-		this.endY = Math.round(e.stageY / this.step);
+		this.endX = Math.round(e.stageX / GameLevel.STEP);
+		this.endY = Math.round(e.stageY / GameLevel.STEP);
 	}
 
 }

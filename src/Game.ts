@@ -1,4 +1,4 @@
-class Game extends egret.DisplayObjectContainer
+class Game extends eui.UILayer
 {
     private static _instance:Game;
     public static get instance():Game
@@ -22,6 +22,7 @@ class Game extends egret.DisplayObjectContainer
         this.init();
     }
 
+    private package:PackageList;
 	private init():void
     {
         console.log("this is a new game!");
@@ -32,6 +33,10 @@ class Game extends egret.DisplayObjectContainer
         sceneManager.registerScene("gameLevel", new GameLevel());
         sceneManager.setCurSceneByName("gameLevel");
         sceneManager.startTick();
+
+        this.package = new PackageList();
+        this.addChild(this.package);
+        this.package.bottom = 0;
     }
 
     private initDB():void
@@ -40,4 +45,6 @@ class Game extends egret.DisplayObjectContainer
         //DBManager.addData("bubbles_json","texture2_json","texture2_png")
         //DBManager.addData("questAnim_json","texture3_json","texture3_png")
     }
+
+
 }

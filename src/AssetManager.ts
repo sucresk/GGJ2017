@@ -16,6 +16,8 @@ class AssetManager
         	result.anchorOffsetY = result.height / 2;
 		}
         
+		result.scaleX = result.scaleY = 2;
+
         return result;
     }
 }
