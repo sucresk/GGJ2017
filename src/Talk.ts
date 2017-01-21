@@ -15,7 +15,7 @@ class Talk extends egret.DisplayObjectContainer {
 		this.text = new egret.TextField();
 		this.text.x = 10;
 		this.text.y = 10;
-		this.text.size = 18;
+		// this.text.size = 18;
 
 		this.addChild(this.text);
 	}
