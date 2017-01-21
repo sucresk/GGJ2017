@@ -2,5 +2,5 @@
 <e:Skin class="PackageIconSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"  height="149" width="128">
 	<w:Config id="159c0078b24" ></w:Config>
 	<e:Image source="itemIcon_png" y="0" scaleX="2" scaleY="2" horizontalCenter="0"/>
-	<e:Label text="{data.name}" left="0" right="0" bottom="0" verticalAlign="middle" textAlign="center" size="18"/>
+	<e:Label text="{data.name}" left="0" right="0" bottom="0" verticalAlign="middle" textAlign="center" size="18" textColor="0xb26937"/>
 </e:Skin>

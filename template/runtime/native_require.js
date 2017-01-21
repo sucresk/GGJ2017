@@ -10,9 +10,10 @@ var game_file_list = [
 	"libs/modules/tween/tween.js",
 	"libs/modules/dragonBones/dragonBones.js",
 	"bin-debug/lion/scenes/Scene.js",
-	"bin-debug/AssetAdapter.js",
+	"bin-debug/scenes/GameLevel.js",
 	"bin-debug/DBManager.js",
 	"bin-debug/Game.js",
+	"bin-debug/Goods.js",
 	"bin-debug/LoadingUI.js",
 	"bin-debug/Main.js",
 	"bin-debug/Quest.js",
@@ -27,7 +28,7 @@ var game_file_list = [
 	"bin-debug/lion/core/fsmachine/FSM.js",
 	"bin-debug/lion/core/fsmachine/State.js",
 	"bin-debug/lion/scenes/IScene.js",
-	"bin-debug/AssetManager.js",
+	"bin-debug/AssetAdapter.js",
 	"bin-debug/lion/scenes/SceneEvent.js",
 	"bin-debug/lion/scenes/SceneManager.js",
 	"bin-debug/package/PackageIcon.js",
@@ -44,7 +45,7 @@ var game_file_list = [
 	"bin-debug/qr/QRRSBlock.js",
 	"bin-debug/qr/QRUtil.js",
 	"bin-debug/scenes/GameInfo.js",
-	"bin-debug/scenes/GameLevel.js",
+	"bin-debug/AssetManager.js",
 	//----auto game_file_list end----
 ];
 
