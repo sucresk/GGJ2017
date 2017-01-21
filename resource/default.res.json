@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "bg_jpg,egret_icon_png,description_json,scene_1_png,roshan_ske_json,roshan_tex_json,roshan_tex_png,items_tex_png,items_ske_json,items_tex_json",
+			"keys": "bg_jpg,egret_icon_png,description_json,scene_1_png,roshan_ske_json,roshan_tex_json,roshan_tex_png,items_tex_png,items_ske_json,items_tex_json,dialog_bg_png,itemIcon_png,letter_bg_png",
 			"name": "preload"
 		}
 	],
@@ -55,6 +55,21 @@
 			"name": "items_tex_json",
 			"type": "json",
 			"url": "assets/dbAnim/items_tex.json"
+		},
+		{
+			"name": "dialog_bg_png",
+			"type": "image",
+			"url": "assets/ui/dialog_bg.png"
+		},
+		{
+			"name": "itemIcon_png",
+			"type": "image",
+			"url": "assets/ui/itemIcon.png"
+		},
+		{
+			"name": "letter_bg_png",
+			"type": "image",
+			"url": "assets/ui/letter_bg.png"
 		}
 	]
 }
