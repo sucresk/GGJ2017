@@ -76,7 +76,7 @@ class Main extends egret.DisplayObjectContainer {
             RES.removeEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
             RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
             RES.removeEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, this.onItemLoadError, this);
-            // this.createGameScene();
+            //this.createGameScene();
             this.createGame();
         }
     }
@@ -114,6 +114,7 @@ class Main extends egret.DisplayObjectContainer {
     private textfield: egret.TextField;
 
     private createGame():void{
+       /*
         var aObj:any = {};
         aObj.name = "sucre";
         aObj.age = 18;
@@ -125,6 +126,13 @@ class Main extends egret.DisplayObjectContainer {
 
         var b:string = this.GetQueryString("a");
         console.log(b);
+
+        console.log(egret.localStorage.getItem("a"));
+        egret.localStorage.setItem("a","bingbo2");
+        egret.localStorage.clear();
+        */
+        var game:Game = new Game();
+        this.addChild(game);
     }
     private GetQueryString(name)
     {
