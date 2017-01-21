@@ -7,69 +7,70 @@
 	],
 	"resources": [
 		{
-			"name": "bg_jpg",
+			"url": "assets/bg.jpg",
 			"type": "image",
-			"url": "assets/bg.jpg"
+			"name": "bg_jpg"
 		},
 		{
-			"name": "egret_icon_png",
+			"url": "assets/egret_icon.png",
 			"type": "image",
-			"url": "assets/egret_icon.png"
+			"name": "egret_icon_png"
 		},
 		{
-			"name": "description_json",
+			"url": "config/description.json",
 			"type": "json",
-			"url": "config/description.json"
+			"name": "description_json"
 		},
 		{
-			"name": "scene_1_png",
+			"url": "assets/scene_1.png",
 			"type": "image",
-			"url": "assets/scene_1.png"
+			"name": "scene_1_png"
 		},
 		{
-			"name": "roshan_ske_json",
+			"url": "assets/dbAnim/roshan_ske.json",
 			"type": "json",
-			"url": "assets/dbAnim/roshan_ske.json"
+			"name": "roshan_ske_json"
 		},
 		{
-			"name": "roshan_tex_json",
+			"url": "assets/dbAnim/roshan_tex.json",
 			"type": "json",
-			"url": "assets/dbAnim/roshan_tex.json"
+			"name": "roshan_tex_json"
 		},
 		{
-			"name": "roshan_tex_png",
+			"url": "assets/dbAnim/roshan_tex.png",
 			"type": "image",
-			"url": "assets/dbAnim/roshan_tex.png"
+			"name": "roshan_tex_png"
 		},
 		{
-			"name": "items_tex_png",
+			"url": "assets/dbAnim/items_tex.png",
 			"type": "image",
-			"url": "assets/dbAnim/items_tex.png"
+			"name": "items_tex_png"
 		},
 		{
-			"name": "items_ske_json",
+			"url": "assets/dbAnim/items_ske.json",
 			"type": "json",
-			"url": "assets/dbAnim/items_ske.json"
+			"name": "items_ske_json"
 		},
 		{
-			"name": "items_tex_json",
+			"url": "assets/dbAnim/items_tex.json",
 			"type": "json",
-			"url": "assets/dbAnim/items_tex.json"
+			"name": "items_tex_json"
 		},
 		{
+			"url": "assets/ui/dialog_bg.png",
+			"type": "image",
 			"name": "dialog_bg_png",
-			"type": "image",
-			"url": "assets/ui/dialog_bg.png"
+			"scale9grid": "13,13,38,39"
 		},
 		{
-			"name": "itemIcon_png",
+			"url": "assets/ui/itemIcon.png",
 			"type": "image",
-			"url": "assets/ui/itemIcon.png"
+			"name": "itemIcon_png"
 		},
 		{
-			"name": "letter_bg_png",
+			"url": "assets/ui/letter_bg.png",
 			"type": "image",
-			"url": "assets/ui/letter_bg.png"
+			"name": "letter_bg_png"
 		}
 	]
 }

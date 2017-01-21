@@ -17,6 +17,7 @@ var game_file_list = [
 	"bin-debug/Quest.js",
 	"bin-debug/Role.js",
 	"bin-debug/RoleManager.js",
+	"bin-debug/Talk.js",
 	"bin-debug/events/RoleEvent.js",
 	"bin-debug/lion/core/BaseControl.js",
 	"bin-debug/lion/core/Notification.js",
