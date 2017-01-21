@@ -4,49 +4,49 @@
             "id":1,
             "type":"letter",
             "name":"遗书一",
-            "icon":"letter1_icon_png",
+            "icon":"letter_1_png",
             "content":"谢谢你，森迪，我度过了最难忘的一天，我真希望永远都不要醒来。再见。\n最爱你的安德"
         },
         {
             "id":2,
             "type":"letter",
             "name":"遗书二",
-            "icon":"letter1_icon_png",
+            "icon":"letter_2_png",
             "content":"你的热情让我无法思考，该死，我该早一点想到的。再见。\n最爱你的安德。"
         },
         {
             "id":3,
             "type":"letter",
             "name":"遗书三",
-            "icon":"letter1_icon_png",
+            "icon":"letter_3_png",
             "content":"不，那不是真的你，为什么我还在这里，我要回去了。再见。\n最爱你的安德"
         },
         {
             "id":4,
             "type":"letter",
             "name":"遗书四",
-            "icon":"letter1_icon_png",
+            "icon":"letter_4_png",
             "content":"是“七重梦境”，我是那么的爱你，为什么这样对我，是艾拉，一定是她，早知道就不该手下留情的。再见。\n最爱你的安德"
         },
         {
             "id":5,
             "type":"letter",
             "name":"遗书五",
-            "icon":"letter1_icon_png",
+            "icon":"letter_5_png",
             "content":"我一定会找到回去的路，只要不在迷失域，总是有办法回去的。再见。\n最爱你的安德"
         },
         {
             "id":6,
             "type":"letter",
             "name":"遗书六",
-            "icon":"letter1_icon_png",
+            "icon":"letter_6_png",
             "content":"爱是平等的，为什么我的爱缺这么艰难。再见。\n最爱你的安德"
         },
         {
             "id":7,
             "type":"letter",
             "name":"遗书七",
-            "icon":"letter1_icon_png",
+            "icon":"letter_7_png",
             "content":"我终于到到出去的路了，我们很快就会见面了。\n最爱你的安德"
         },
         {
