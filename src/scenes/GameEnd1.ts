@@ -27,6 +27,6 @@ class GameEnd1 extends Scene
 
 	private onTouch(e:egret.TouchEvent):void
 	{
-		this.next("gameStart");
+		this.next("gameScore");
 	}
 }

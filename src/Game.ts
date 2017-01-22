@@ -81,7 +81,24 @@ class Game extends eui.UILayer
     {
         var data:string = egret.localStorage.getItem("uuuData");
         var dataJson:any = JSON.parse(data);
+
+        var changed:boolean;
+        if(dataJson.startTime == null)
+        {
+            dataJson.startTime = new Date().getTime();
+            changed = true;
+        }
+        if(dataJson.suicideTime == null)
+        {
+            dataJson.suicideTime = 0;
+            changed = true;
+        }
+        console.log("load  ", dataJson);
         userGameData = dataJson;
+        if(changed)
+        {
+            this.save();
+        }
     }
     private initGameData():void
 	{
@@ -92,6 +109,8 @@ class Game extends eui.UILayer
 			userGameData.mainRole = roleDefine[roleIndex];
 			userGameData.package = [];
 			userGameData.roles = [];
+            userGameData.startTime = new Date().getTime();
+            userGameData.suicideTime = 0;
             this.save();
 		}
         
@@ -161,6 +180,7 @@ class Game extends eui.UILayer
         sceneManager.registerScene("gameStart", new GameStart());
         sceneManager.registerScene("gameEnd1", new GameEnd1());
         sceneManager.registerScene("gameEnd2", new GameEnd2());
+        sceneManager.registerScene("gameScore", new GameScore());
         sceneManager.setCurSceneByName("gameStart");
         sceneManager.startTick();
 

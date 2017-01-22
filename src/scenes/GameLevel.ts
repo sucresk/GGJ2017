@@ -106,6 +106,9 @@ class GameLevel extends Scene {
 	}
 	private suicide():void
 	{
+		userGameData.suicideTime++;
+		Game.instance.save();
+		console.log("suicideTime  " + userGameData.suicideTime)
 		if(userGameData.roles && userGameData.roles.length >= 7)
 		{
 			if(userGameData.package.indexOf(SHIELD_ID) != -1)

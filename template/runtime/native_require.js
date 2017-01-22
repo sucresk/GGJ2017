@@ -31,8 +31,8 @@ var game_file_list = [
 	"bin-debug/lion/scenes/IScene.js",
 	"bin-debug/AssetAdapter.js",
 	"bin-debug/lion/scenes/SceneEvent.js",
+	"bin-debug/lion/scenes/SceneManager.js",
 	"bin-debug/view/Confirm.js",
-	"bin-debug/math/Random.js",
 	"bin-debug/package/Letter.js",
 	"bin-debug/package/PackageIcon.js",
 	"bin-debug/package/PackageList.js",
@@ -51,8 +51,9 @@ var game_file_list = [
 	"bin-debug/scenes/GameEnd2.js",
 	"bin-debug/scenes/GameInfo.js",
 	"bin-debug/scenes/GameLevel.js",
+	"bin-debug/scenes/GameScore.js",
 	"bin-debug/scenes/GameStart.js",
-	"bin-debug/lion/scenes/SceneManager.js",
+	"bin-debug/math/Random.js",
 	//----auto game_file_list end----
 ];
 
