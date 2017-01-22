@@ -11,7 +11,7 @@ var game_file_list = [
 	"libs/modules/tween/tween.js",
 	"libs/modules/dragonBones/dragonBones.js",
 	"bin-debug/lion/scenes/Scene.js",
-	"bin-debug/lion/scenes/SceneManager.js",
+	"bin-debug/AssetManager.js",
 	"bin-debug/DBManager.js",
 	"bin-debug/Game.js",
 	"bin-debug/Goods.js",
@@ -31,7 +31,7 @@ var game_file_list = [
 	"bin-debug/lion/scenes/IScene.js",
 	"bin-debug/AssetAdapter.js",
 	"bin-debug/lion/scenes/SceneEvent.js",
-	"bin-debug/AssetManager.js",
+	"bin-debug/view/Confirm.js",
 	"bin-debug/math/Random.js",
 	"bin-debug/package/Letter.js",
 	"bin-debug/package/PackageIcon.js",
@@ -52,7 +52,7 @@ var game_file_list = [
 	"bin-debug/scenes/GameInfo.js",
 	"bin-debug/scenes/GameLevel.js",
 	"bin-debug/scenes/GameStart.js",
-	"bin-debug/view/Confirm.js",
+	"bin-debug/lion/scenes/SceneManager.js",
 	//----auto game_file_list end----
 ];
 

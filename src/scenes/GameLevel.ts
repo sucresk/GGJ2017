@@ -67,18 +67,20 @@ class GameLevel extends Scene {
 		this.initGoods();
 		this.initRole();
 
-		this.btnSuicide = AssetManager.createBitmapByName("suicide_png");
-		this.btnSuicide.scaleX = this.btnSuicide.scaleY = 1;
-		this.btnSuicide.x = 50;
-		this.btnSuicide.y = 50;
-		this.addChild(this.btnSuicide);
-		this.btnSuicide.touchEnabled = true;
-		this.btnSuicide.addEventListener(egret.TouchEvent.TOUCH_END, this.onTouchSuicide, this);
+		// this.btnSuicide = AssetManager.createBitmapByName("suicide_png");
+		// this.btnSuicide.scaleX = this.btnSuicide.scaleY = 1;
+		// this.btnSuicide.x = 50;
+		// this.btnSuicide.y = 50;
+		// this.addChild(this.btnSuicide);
+		// this.btnSuicide.touchEnabled = true;
+		// this.btnSuicide.addEventListener(egret.TouchEvent.TOUCH_END, this.onTouchSuicide, this);
 		
 		// this.touchEnabled = true;
 		// this.addEventListener(egret.TouchEvent.TOUCH_END, this.onTouch, this);	
 
 		this.initListener();
+
+		packageList.visible = true;
 	}
 
 	private onTouchSuicide():void
@@ -123,7 +125,7 @@ class GameLevel extends Scene {
 			this.roleContainer.removeChildren();
 			this.initGoods();
 			this.resetRole();
-			this.addChild(this.btnSuicide);
+			// this.addChild(this.btnSuicide);
 		}
 		
 	}
@@ -312,10 +314,19 @@ class GameLevel extends Scene {
 	private initListener(): void {
 		this.touchEnabled = true;
 		this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClickHandler, this);
+		packageList.addEventListener("suicide", this.onSuicide,this);
 	}
 	private onClickHandler(e: egret.TouchEvent): void {
 		this.endX = Math.round(e.stageX / GameLevel.STEP);
 		this.endY = Math.round(e.stageY / GameLevel.STEP);
+	}
+
+	private onSuicide(e:egret.Event):void
+	{
+		var self = this;
+		talk.setTalk("自杀",()=>{
+			self.suicide();
+		});
 	}
 
 }
